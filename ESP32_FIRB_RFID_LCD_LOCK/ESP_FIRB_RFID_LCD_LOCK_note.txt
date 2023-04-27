@@ -1,0 +1,122 @@
+//---------------------------------------------Main 1--------------------------//
+//-------------------------------------------- Yes ---------------------------//
+if (is_master(read_card) == true) {
+        lcd.clear();
+        lcd.setCursor(0, 0);
+        lcd.print("This Card is Master !!");
+        delay(1000);
+        lcd.clear();
+        lcd.setCursor(0, 0);
+        lcd.print("Return Main Menu");
+        delay(1000);
+        lcd.clear();
+        lock_bt = 1;
+        yes = false;
+        lock_add_delete = true;
+        off_option = 1;
+        tt_choose = 1;
+      }
+      else{
+        if (find_id(read_card) == false) {                         // Card exist
+          lcd.clear();
+          lcd.setCursor(0, 0);
+          lcd.print("Starting Add Card!!");
+          delay(1000);
+          write_id(read_card);
+          delay(1000);
+          lcd.clear();
+          lcd.setCursor(0, 0);
+          lcd.print("Add Complete!!");
+          delay(1000);
+          lcd.clear();
+          lcd.setCursor(0, 0);
+          lcd.print("Return Main Menu");
+          delay(1000);
+          //----------------------------- Retrun Main Menu -------------------------//
+          lcd.clear();
+          lock_bt = 1;
+          yes = false;
+          lock_add_delete = true;
+          off_option = 1;
+          tt_choose = 1;
+        }
+        else {                                                    // Card new
+          //
+          lcd.clear();
+          lcd.setCursor(0, 0);
+          lcd.print("This Card already exist !!");
+          delay(1000);
+          lcd.clear();
+          lcd.setCursor(0, 0);
+          lcd.print("Return Main Menu");
+          delay(1000);
+          lcd.clear();
+          lock_bt = 1;
+          yes = false;
+          lock_add_delete = true;
+          off_option = 1;
+          tt_choose = 1;
+        }
+      }
+
+
+
+//---------------------------------------------Main 2--------------------------//
+//-------------------------------------------- Yes ---------------------------//
+if (is_master(read_card) == true) {
+        lcd.clear();
+        lcd.setCursor(0, 0);
+        lcd.print("This Card is Master !!");
+        delay(1000);
+        lcd.clear();
+        lcd.setCursor(0, 0);
+        lcd.print("Return Main Menu");
+        delay(1000);
+        lcd.clear();
+        lock_bt = 1;
+        no = false;
+        lock_add_delete = true;
+        off_option = 1;
+        tt_choose = 1;
+      }
+      else{
+        if (find_id(read_card) == true) {                         // Card exist
+          lcd.clear();
+          lcd.setCursor(0, 0);
+          lcd.print("Starting Delete Card !!");
+          delay(1000);
+          delete_id(read_card);
+          delay(1000);
+          lcd.clear();
+          lcd.setCursor(0, 0);
+          lcd.print("Delete Card Complete ");
+          delay(1000);
+          lcd.clear();
+          lcd.setCursor(0, 0);
+          lcd.print("Return Main Menu");
+          delay(1000);
+          lcd.clear();
+          lock_bt = 1;
+          yes = false;
+          lock_add_delete = true;
+          off_option = 1;
+          tt_choose = 1;
+        }
+        else {                                                    // Card new
+          lcd.clear();
+          lcd.setCursor(0, 0);
+          lcd.print("Card dont exist !!");
+          delay(1000);
+          lcd.clear();
+          lcd.setCursor(0, 0);
+          lcd.print("Return Main Menu");
+          delay(1000);
+          //----------------------------- Retrun Main Menu -------------------------//
+          lcd.clear();
+          lock_bt = 1;
+          yes = false;
+          lock_add_delete = true;
+          off_option = 1;
+          tt_choose = 1;
+        }
+      }
